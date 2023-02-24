@@ -2,7 +2,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #multi-step-form-container{
-    max-width: 60%;
+    max-width: 100%;
     margin: 0px auto;
 }
 
