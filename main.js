@@ -70,3 +70,22 @@ document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn)
         navigateToFormStep(stepNumber);
     });
 });
+
+function isUSAZipCode(str) 
+{
+  return /^\d{5}(-\d{4})?$/.test(str);
+}
+
+function validateInput() 
+{
+  console.log("validateInput");
+  let zipCode = document.getElementById("zipCode").value;
+  let message = "";
+  if (isUSAZipCode(zipCode)) 
+  {
+    message = "Valid Zip Code";
+  } else {
+    message = "Invalid Zip Code";
+  }
+  document.getElementById("msg").innerHTML = message;
+}

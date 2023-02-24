@@ -169,7 +169,11 @@
                
                 <div class="mt-3">
                     <label>What is the zip code that you live at and where you file taxes?</label>
-                        <input type="number" placeholder="">
+                        <input onKeyUp="validateInput()"  id="zipCode" placeholder="Zip Code" type="text">
+                        <div id="msg">
+
+                        </div>
+                    
                 </div>
                 <div class="mt-3">
                     <button class="button btn-navigate-form-step" type="button" step_number="6">Prev</button>
