@@ -60,6 +60,7 @@ document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn)
      * Add a click event listener to the button.
      */
     formNavigationBtn.addEventListener("click", () => {
+      
         /**
          * Get the value of the step.
          */
@@ -68,6 +69,7 @@ document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn)
          * Call the function to navigate to the target form step.
          */
         navigateToFormStep(stepNumber);
+      
     });
 });
 
@@ -84,8 +86,74 @@ function validateInput()
   if (isUSAZipCode(zipCode)) 
   {
     message = "Valid Zip Code";
+    
   } else {
     message = "Invalid Zip Code";
   }
   document.getElementById("msg").innerHTML = message;
 }
+var currentAgeInput = document.getElementById("current-age");
+currentAgeInput.addEventListener("keyup", validateCurrentAge);
+
+var retirementAgeInput = document.getElementById("retirement-age");
+retirementAgeInput.addEventListener("keyup", validateRetirementAge);
+
+// Repeat for each input field
+function validateCurrentAge() {
+  var currentAgeInput = document.getElementById("current-age");
+  var currentAge = parseInt(currentAgeInput.value);
+
+  if (currentAge < 18 || currentAge > 100 || isNaN(currentAge)) {
+    // Show an error message
+    currentAgeInput.setCustomValidity("Please enter a valid age between 18 and 100");
+  } else {
+    // Clear the error message
+    currentAgeInput.setCustomValidity("");
+  }
+}
+
+function validateRetirementAge() {
+  var retirementAgeInput = document.getElementById("retirement-age");
+  var retirementAge = parseInt(retirementAgeInput.value);
+
+  if (retirementAge < 18 || retirementAge > 100 || isNaN(retirementAge)) {
+    // Show an error message
+    retirementAgeInput.setCustomValidity("Please enter a valid retirement age between 18 and 100");
+  } else {
+    // Clear the error message
+    retirementAgeInput.setCustomValidity("");
+  }
+}
+
+
+function sendEmail() {
+  var currentAge = document.getElementById("current-age").value;
+  var retirmentAge = document.getElementById("retirement-age").value;
+  var Name = document.getElementById("name").value;
+  var anuualSalary = document.getElementById("annual-salary").value;
+  var monthlySavings = document.getElementById('monthly-savings').value;
+
+  var yearsToRetirement = retirmentAge - currentAge;
+  var retirementSavings = 0 ;
+
+  for (var i = 1; i <= yearsToRetirement; i++){
+    var savingsThisYear = (i / yearsToRetirement) * anuualSalary;
+    retirementSavings += savingsThisYear;
+  }
+  var output = document.getElementById("result");
+output.innerHTML = "Hello " + Name + ", based on your current age, your desire retirment date, and other information you provided, -Total savings of " + savingsThisYear + "- To be saving $" + monthlySavings + " each month to meet your retirment goals"
+
+}
+
+
+// Email.send({
+// 	Host: "smtp.gmail.com",
+// 	Username : "No reply",
+// 	Password : "Raji@olalekan1234",
+// 	To : 'adedejir76@gmail.com',
+// 	From : "rajcodes733@gmail.com",
+// 	Subject : "how far guy",
+// 	Body : "heeeeee",
+// 	}).then(
+// 		message => alert("mail sent successfully")
+// 	);
