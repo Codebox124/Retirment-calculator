@@ -176,3 +176,24 @@ ul.form-stepper li a .form-stepper-circle {
 .form-stepper a {
     cursor: default;
 }
+.inputt{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.input{
+    flex-grow: 1;
+    
+}
+.icon{
+    background-color: #4361ee;
+    color: white;
+    padding: 5px;
+    height: 30px;
+
+}
+.icon span{
+    text-align: center;
+    font-weight: bold;
+}

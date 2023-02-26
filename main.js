@@ -141,7 +141,7 @@ function sendEmail() {
     retirementSavings += savingsThisYear;
   }
   var output = document.getElementById("result");
-output.innerHTML = "Hello " + Name + ", based on your current age, your desire retirment date, and other information you provided, -Total savings of " + retirementSavings.toFixed(2) + " in retirement at age " + retirmentAge + "- To be saving $" + monthlySavings + " each month to meet your retirment goals"
+output.innerHTML = "Hello " + Name + ", based on your current age, your desire retirment date, and other information you provided, -Total savings of " + retirementSavings.toFixed(2) + " in retirement at age " + retirmentAge + "- To be saving $" + monthlySavings + " each month to meet your retirment goals" + " Disclaimer: it is also worth nothing that this is just a basic calculation and does not consider other important factors. To get a comprehensive and personalized retirement plan tailored to your specific circumstances, please schedule a free consultation with one of our licensed financial professionals to discuss your retirment planning needs.";
 
 }
 
